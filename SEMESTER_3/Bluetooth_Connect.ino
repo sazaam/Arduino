@@ -26,6 +26,16 @@ e526c3ad-9591-44e7-bcdc-dfc916f2f192
 
 Blender Crashes Script etc...
 https://blender.stackexchange.com/questions/120266/when-blender-crashes-during-rendering
+
+
+Send Notifications through PushSafer
+https://projecthub.arduino.cc/pushsafer/push-notifications-with-pushsafer-ios-android-win10-acd039
+
+
+
+NINA Wifi + BLE Workaround for Simultaneaous
+https://forum.arduino.cc/t/switching-between-wifi-and-ble/629966/7
+
 */
 
 
