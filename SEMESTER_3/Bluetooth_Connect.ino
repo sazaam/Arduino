@@ -22,7 +22,11 @@ e526c3ad-9591-44e7-bcdc-dfc916f2f192
 3a6bf87c-4af3-4b5c-a147-acb272c0d957
 
 */
+/*
 
+Blender Crashes Script etc...
+https://blender.stackexchange.com/questions/120266/when-blender-crashes-during-rendering
+*/
 
 
 
