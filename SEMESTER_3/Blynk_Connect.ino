@@ -5,18 +5,25 @@
 // Comment this out to disable prints and save space
 #define BLYNK_PRINT Serial
 
+
+
 #include <SPI.h>
 #include <WiFiNINA.h>
 #include <BlynkSimpleWiFiNINA.h>
+
+
+
 
 char auth[] = BLYNK_AUTH_TOKEN;
 
 // Your WiFi credentials.
 // Set password to "" for open networks.
-char ssid[] = ""; // HotspotName
-char pass[] = ""; // Passwd
+char ssid[] = "";
+char pass[] = "";
 
 BlynkTimer timer;
+
+
 
 // This function is called every time the Virtual Pin 0 state changes
 BLYNK_WRITE(V0)
@@ -28,6 +35,24 @@ BLYNK_WRITE(V0)
   Blynk.virtualWrite(V1, value);
 }
 
+
+//const int pin_led = A1; // pin to use for the LED
+const int pin_led = 3;
+
+BLYNK_WRITE(V4) // this command is listening when something is written to V4
+{
+  int pinValue = param.asInt(); // assigning incoming value from pin V1 to a variable
+  
+//  int val = 0 ;
+  
+//  val = map(pinValue, 0, 255, 0, 1023);
+  analogWrite(pin_led, pinValue);
+
+  Serial.print("V1 value is: "); // printing value to serial monitor
+  Serial.println(pinValue);
+}
+
+
 // This function is called every time the device is connected to the Blynk.Cloud
 BLYNK_CONNECTED()
 {
@@ -36,6 +61,8 @@ BLYNK_CONNECTED()
   Blynk.setProperty(V3, "onImageUrl",  "https://static-image.nyc3.cdn.digitaloceanspaces.com/general/fte/congratulations_pressed.png");
   Blynk.setProperty(V3, "url", "https://docs.blynk.io/en/getting-started/what-do-i-need-to-blynk/how-quickstart-device-was-made");
 }
+
+
 
 // This function sends Arduino's uptime every second to Virtual Pin 2.
 void myTimerEvent()
